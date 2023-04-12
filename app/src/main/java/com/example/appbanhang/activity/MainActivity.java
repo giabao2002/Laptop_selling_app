@@ -55,11 +55,10 @@ public class MainActivity extends AppCompatActivity {
         Anhxa();
         ActionBar();
         if (isConnected(this)) {
-            Toast.makeText(getApplicationContext(), "ok", Toast.LENGTH_SHORT).show();
             ActionViewFlipper();
             getLoaiSanPham();
         } else {
-            Toast.makeText(getApplicationContext(), "okn't", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Không có internet, vui lòng kết nối", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -70,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(
                         loaiSpModel -> {
                             if (loaiSpModel.isSuccess()) {
-                                Toast.makeText(getApplicationContext(), loaiSpModel.getResult().get(0).getTensanpham(), Toast.LENGTH_SHORT).show();
+                                mangloaisp = loaiSpModel.getResult();
+                                loaiSanPhamAdapter = new LoaiSanPhamAdapter(getApplicationContext(),mangloaisp);
+                                listViewManHinhChinh.setAdapter(loaiSanPhamAdapter);
                             }
                         }
                 ));
@@ -115,8 +116,7 @@ public class MainActivity extends AppCompatActivity {
             navigationView = findViewById(R.id.navigationview);
             drawerLayout = findViewById(R.id.drawerlayout);
             mangloaisp = new ArrayList<>();
-            loaiSanPhamAdapter = new LoaiSanPhamAdapter(getApplicationContext(),mangloaisp);
-            listViewManHinhChinh.setAdapter(loaiSanPhamAdapter);
+
     }
 
     private boolean isConnected(Context context) {
@@ -128,5 +128,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    @Override
+    protected void onDestroy() {
+        compositeDisposable.clear();
+        super.onDestroy();
+    }
 }
-//675688
