@@ -60,6 +60,6 @@ public class LoaiSanPhamAdapter extends BaseAdapter {
             Glide.with(context).load(array.get(i).getHinhanh()).into(viewHolder.imagehinhanh);
         }
 
-        return null;
+        return view;
     }
 }
