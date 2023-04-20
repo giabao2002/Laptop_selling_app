@@ -39,7 +39,7 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
     public void onBindViewHolder(@NonNull SanPhamMoiAdapter.MyViewHolder holder, int position) {
         SanPhamMoi sanPhamMoi = array.get(position);
         holder.txtten.setText(sanPhamMoi.getTensp());
-        DecimalFormat decimalFormat = new DecimalFormat(patter:"###,###,###");
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.txtgia.setText("Gia: "+decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp()))+ "Đ" );
         Glide.with(context).load(sanPhamMoi.getHinhanh()).into(holder.imghinhanh);
     }
