@@ -2,7 +2,7 @@ package com.example.appbanhang.model;
 
 public class SanPhamMoi {
     int id;
-    String ten;
+    String tensp;
     String hinhanh;
     String giasp;
     String mota;
@@ -16,12 +16,12 @@ public class SanPhamMoi {
         this.id = id;
     }
 
-    public String getTen() {
-        return ten;
+    public String getTensp() {
+        return tensp;
     }
 
     public void setTen(String ten) {
-        this.ten = ten;
+        this.tensp = ten;
     }
 
     public String getHinhanh() {

@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.example.appbanhang.R;
 import com.example.appbanhang.model.SanPhamMoi;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.MyViewHolder> {
@@ -37,8 +38,10 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         SanPhamMoi sanPhamMoi = array.get(position);
-        holder.txtten.setText(sanPhamMoi.getTen());
-        holder.txtgia.setText(sanPhamMoi.getGiasp());
+        holder.txtten.setText(sanPhamMoi.getTensp());
+        DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
+
+        holder.txtgia.setText("Giá : " + decimalFormat.format(Double.parseDouble(sanPhamMoi.getGiasp())) + " VNĐ");
         Glide.with(context).load(sanPhamMoi.getHinhanh()).into(holder.imghinhanh);
     }
 
@@ -52,9 +55,9 @@ public class SanPhamMoiAdapter extends RecyclerView.Adapter<SanPhamMoiAdapter.My
         ImageView imghinhanh;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtgia = itemView.findViewById(R.id.items_gia);
+            txtgia = itemView.findViewById(R.id.itemsp_gia);
             txtten = itemView.findViewById(R.id.itemsp_ten);
-            imghinhanh = itemView.findViewById(R.id.item_image);
+            imghinhanh = itemView.findViewById(R.id.itemsp_image);
         }
     }
 }
