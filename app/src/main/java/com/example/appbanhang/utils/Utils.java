@@ -1,7 +1,7 @@
 package com.example.appbanhang.utils;
 
 public class Utils {
-    public static final String BASE_URL = "http://192.168.1.101/banhang/";
+    public static final String BASE_URL = "http://192.168.26.190/banhang/";
 }
 
 //ip của Bảo: 192.168.24.105
