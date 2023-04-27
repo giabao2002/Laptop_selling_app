@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 23, 2023 lúc 11:19 AM
+-- Thời gian đã tạo: Th4 27, 2023 lúc 07:09 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -38,10 +38,11 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id`, `tensanpham`, `hinhanh`) VALUES
-(1, 'Điện thoại', 'https://ngochieu.name.vn/img/mobile.png'),
-(2, 'Laptop', 'https://ngochieu.name.vn/img/laptop.png'),
-(3, 'Liên hệ', 'https://ngochieu.name.vn/img/contact.png'),
-(4, 'Thông tin', 'https://ngochieu.name.vn/img/info.png');
+(1, 'Trang chủ', 'https://ngochieu.name.vn/img/home.png'),
+(2, 'Điện thoại', 'https://ngochieu.name.vn/img/mobile.png'),
+(3, 'Laptop', 'https://ngochieu.name.vn/img/laptop.png'),
+(4, 'Thông tin', 'https://ngochieu.name.vn/img/info.png'),
+(5, 'Liên hệ', 'https://ngochieu.name.vn/img/contact.png');
 
 -- --------------------------------------------------------
 
@@ -84,6 +85,27 @@ INSERT INTO `sanphammoi` (`id`, `tensp`, `giasp`, `hinhanh`, `mota`, `loai`) VAL
 (34, 'Điện thoại iPhone 14 Pro Max 128GB', '26990000', 'https://images.fpt.shop/unsafe/fit-in/960x640/filters:quality(90):fill(white):upscale()/fptshop.com.vn/Uploads/Originals/2022/10/28/638025697712034572_iPhone%2014%20Promax%20(1).jpg', '\"Kích thước màn hình 6.7 inch\r\nBộ nhớ trong: 128 GB\r\nPhiên bản CPU	Apple A16 Bionic\r\nĐộ phân giải: 2796 x 1290 Pixels\r\nVersion: iOS 16\r\n\"', 1),
 (35, 'Điện thoại Samsung Galaxy S23 Ultra', '32590000', 'https://onewaymobile.vn/images/products/2023/02/02/large/samsung-s23-ultra-green_1675308334.png', '\"RAM: 12GB \r\nKích thước màn hình: 6.8\" \r\nTần số quét:120 Hz \r\nBộ nhớ trong: 1TB \r\nĐộ phân giải: camera sau Chính 200 MP & Phụ 12 MP, 10 MP, 10 MP \r\nĐộ phân giải: camera trước 40 MP \r\nChip xử lý: Snapdragon 8 Gen 2 \r\nDung lượng pin:5000 mAh\"', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `pass` varchar(250) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `mobile` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `pass`, `username`, `mobile`) VALUES
+(1, 'hoang@gmail.com', '123456', 'hoang', '123456789');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -101,6 +123,12 @@ ALTER TABLE `sanphammoi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -108,13 +136,19 @@ ALTER TABLE `sanphammoi`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `sanphammoi`
 --
 ALTER TABLE `sanphammoi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT cho bảng `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
