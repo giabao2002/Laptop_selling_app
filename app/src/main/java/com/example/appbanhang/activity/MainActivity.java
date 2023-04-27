@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(dienthoai);
                         break;
                     case 2:
-                        Intent laptop = new Intent(getApplicationContext(), DienThoaiActivity.class);
+                        Intent laptop = new Intent(getApplicationContext(), LaptopActivity.class);
                         laptop.putExtra("loai", 2);
                         startActivity(laptop);
                         break;
@@ -171,8 +171,11 @@ public class MainActivity extends AppCompatActivity {
             navigationView = findViewById(R.id.navigationview);
             drawerLayout = findViewById(R.id.drawerlayout);
             mangloaisp = new ArrayList<>();
-            mangloaisp = new ArrayList<>();
+//            mangloaisp = new ArrayList<>();
             mangSpMoi = new ArrayList<>();
+            if (Utils.manggiohang == null){
+                Utils.manggiohang = new ArrayList<>();
+            }
     }
 
     private boolean isConnected(Context context) {
