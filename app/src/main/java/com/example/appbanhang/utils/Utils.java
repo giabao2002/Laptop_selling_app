@@ -5,7 +5,7 @@ import com.example.appbanhang.model.GioHang;
 import java.util.List;
 
 public class Utils {
-    public static final String BASE_URL = "http://192.168.1.67/banhang/";
+    public static final String BASE_URL = "http://192.168.24.105/banhang/";
     public static List<GioHang> manggiohang;
 }
 

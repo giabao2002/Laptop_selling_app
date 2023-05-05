@@ -44,9 +44,7 @@ public class GioHang {
         this.hinhsp = hinhsp;
     }
 
-    public int getSoluong() {
-        return soluong;
-    }
+    public int getSoluong() {return soluong;}
 
     public void setSoluong(int soluong) {
         this.soluong = soluong;
