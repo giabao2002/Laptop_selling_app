@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,6 +26,7 @@ import com.bumptech.glide.Glide;
 import com.example.appbanhang.R;
 import com.example.appbanhang.adapter.LoaiSanPhamAdapter;
 import com.example.appbanhang.adapter.SanPhamMoiAdapter;
+import com.example.appbanhang.model.GioHang;
 import com.example.appbanhang.model.LoaiSp;
 import com.example.appbanhang.model.SanPhamMoi;
 import com.example.appbanhang.model.SanPhamMoiModel;
@@ -32,6 +34,7 @@ import com.example.appbanhang.retrofit.ApiBanHang;
 import com.example.appbanhang.retrofit.RetrofitClient;
 import com.example.appbanhang.utils.Utils;
 import com.google.android.material.navigation.NavigationView;
+import com.nex3z.notificationbadge.NotificationBadge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     ApiBanHang apiBanHang;
     List<SanPhamMoi> mangSpMoi;
     SanPhamMoiAdapter spAdapter;
+    NotificationBadge badge;
+    FrameLayout frameLayout;
 
 
     @Override
@@ -170,12 +175,37 @@ public class MainActivity extends AppCompatActivity {
             listViewManHinhChinh = findViewById(R.id.listviewmanhinhchinh);
             navigationView = findViewById(R.id.navigationview);
             drawerLayout = findViewById(R.id.drawerlayout);
+            badge = findViewById(R.id.menu_sl);
+            frameLayout = findViewById(R.id.framegiohang);
             mangloaisp = new ArrayList<>();
 //            mangloaisp = new ArrayList<>();
             mangSpMoi = new ArrayList<>();
             if (Utils.manggiohang == null){
                 Utils.manggiohang = new ArrayList<>();
+            } else {
+                int totalItem = 0;
+                for(int i = 0; i < Utils.manggiohang.size();i++){
+                    totalItem = totalItem+Utils.manggiohang.get(i).getSoluong();
+                }
+                badge.setText(String.valueOf(totalItem));
             }
+            frameLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent giohang = new Intent(getApplicationContext(), GioHangActivity.class);
+                    startActivity(giohang);
+                }
+            });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int totalItem = 0;
+        for(int i = 0; i < Utils.manggiohang.size();i++){
+            totalItem = totalItem+Utils.manggiohang.get(i).getSoluong();
+        }
+        badge.setText(String.valueOf(totalItem));
     }
 
     private boolean isConnected(Context context) {
