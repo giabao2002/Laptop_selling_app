@@ -33,5 +33,12 @@ public interface ApiBanHang {
             @Field("mobile") String mobile
     );
 
+    @POST("dangnhap.php")
+    @FormUrlEncoded
+    Observable<UserModel> dangNhap(
+            @Field("email") String email,
+            @Field("pass") String pass
+    );
+
 
 }

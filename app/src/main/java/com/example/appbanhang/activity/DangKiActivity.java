@@ -3,6 +3,7 @@ package com.example.appbanhang.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -67,7 +68,11 @@ public class DangKiActivity extends AppCompatActivity {
                         .subscribe(
                                 userModel -> {
                                     if (userModel.isSuccess()) {
-                                        Toast.makeText(getApplicationContext(), "Thanh cong", Toast.LENGTH_SHORT).show();
+                                        Utils.user_current.setEmail(str_email);
+                                        Utils.user_current.setPass(str_pass);
+                                        Intent intent = new Intent(getApplicationContext(), DangNhapActivity.class);
+                                        startActivity(intent);
+                                        finish();
 
                                     } else {
                                         Toast.makeText(getApplicationContext(), userModel.getMessage(), Toast.LENGTH_SHORT).show();
