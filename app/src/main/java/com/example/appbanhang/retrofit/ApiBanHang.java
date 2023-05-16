@@ -47,6 +47,11 @@ public interface ApiBanHang {
             @Field("email") String email
     );
 
+    @POST("xemdonhang.php")
+    @FormUrlEncoded
+    Observable<DonHangModel> xemDonHang(
+            @Field("iduser") int id
+    );
 
     @POST("donhang.php")
     @FormUrlEncoded
@@ -58,14 +63,8 @@ public interface ApiBanHang {
             @Field("diachi") String diachi,
             @Field("soluong") int soluong,
             @Field("chitiet") String chitiet
-    );
+            );
 
-
-    @POST("xemdonhang.php")
-    @FormUrlEncoded
-    Observable<DonHangModel> xemDonHang(
-            @Field("iduser") int id
-    );
 
 
 
