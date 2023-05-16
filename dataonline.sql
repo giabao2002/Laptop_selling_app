@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 27, 2023 lúc 07:09 PM
+-- Thời gian đã tạo: Th5 16, 2023 lúc 09:45 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -20,6 +20,53 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `dataonline`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chitietdonhang`
+--
+
+CREATE TABLE `chitietdonhang` (
+  `iddonhang` int(11) NOT NULL,
+  `idsp` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL,
+  `gia` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitietdonhang`
+--
+
+INSERT INTO `chitietdonhang` (`iddonhang`, `idsp`, `soluong`, `gia`) VALUES
+(12, 66, 1, '20500000'),
+(12, 66, 2, '33990000');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `donhang`
+--
+
+CREATE TABLE `donhang` (
+  `id` int(11) NOT NULL,
+  `iduser` int(11) NOT NULL,
+  `diachi` text NOT NULL,
+  `sodienthoai` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `soluong` int(11) NOT NULL,
+  `tongtien` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `donhang`
+--
+
+INSERT INTO `donhang` (`id`, `iduser`, `diachi`, `sodienthoai`, `email`, `soluong`, `tongtien`) VALUES
+(1, 2, 'hdf sjdfhdk', '0987654321', 'example@gmail.com', 10, '1000000'),
+(2, 2, '4444444444', '0987654321', 'example@gmail.com', 10, '1000000'),
+(3, 2, 'hdf sjdfhdk', '0987654321', 'example@gmail.com', 10, '1000000'),
+(4, 2, 'hdf sjdfhdk', '0987654321', 'example@gmail.com', 10, '1000000');
 
 -- --------------------------------------------------------
 
@@ -111,6 +158,12 @@ INSERT INTO `user` (`id`, `email`, `pass`, `username`, `mobile`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `donhang`
+--
+ALTER TABLE `donhang`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
@@ -133,6 +186,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `donhang`
+--
+ALTER TABLE `donhang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
@@ -148,7 +207,7 @@ ALTER TABLE `sanphammoi`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
