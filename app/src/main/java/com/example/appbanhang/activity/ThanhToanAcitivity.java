@@ -22,7 +22,6 @@ import com.google.gson.Gson;
 import java.text.DecimalFormat;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -39,7 +38,7 @@ public class ThanhToanAcitivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thanh_toan_acitivity);
+        setContentView(R.layout.activity_thanh_toan);
         initView();
         countItem();
         initControl();
