@@ -36,8 +36,6 @@ public class XemDonActivity extends AppCompatActivity {
         getOder();
 
 
-
-
     }
 
     private void getOder() {

@@ -5,8 +5,7 @@ $total = 5; // can lay 5 san pham tren 1 trang
 $pos = ($page - 1) * $total; // 0,5 5,5
 $loai = $_POST['loai'];
 
-$query = 'SELECT * FROM `sanphammoi` WHERE `loai`= ' . $loai . ' LIMIT ' . $page . ', ' . $total . '
-';
+$query = 'SELECT * FROM `sanphammoi` WHERE `loai`= ' . $loai . ' LIMIT ' . $page . ', ' . $total . '';
 $data = mysqli_query($conn, $query);
 $result = array();
 while ($row = mysqli_fetch_assoc($data)) {
