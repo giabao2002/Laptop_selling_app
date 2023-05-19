@@ -40,6 +40,8 @@ public class ChitietAdapter extends RecyclerView.Adapter<ChitietAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Item item = itemList.get(position);
         holder.txtten.setText(item.getTensp()+ "");
+        holder.txtsoluong.setText("Số lượng: " + item.getSoluong() + "");
+        Glide.with(context).load(item.getHinhanh()).into(holder.imagechitiet);
     }
 
     @Override
