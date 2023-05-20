@@ -141,9 +141,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void ActionViewFlipper() {
         List<String> mangquangcao = new ArrayList<>();
-        mangquangcao.add("http://mauweb.monamedia.net/thegioididong/wp-content/uploads/2017/12/banner-Le-hoi-phu-kien-800-300.png");
-        mangquangcao.add("http://mauweb.monamedia.net/thegioididong/wp-content/uploads/2017/12/banner-HC-Tra-Gop-800-300.png");
-        mangquangcao.add("http://mauweb.monamedia.net/thegioididong/wp-content/uploads/2017/12/banner-big-ky-nguyen-800-300.jpg");
+        mangquangcao.add("https://cdn.tgdd.vn/Files/2023/05/19/1530599/minigame-190523-143432-800-resize.jpg");
+        mangquangcao.add("https://cdn.tgdd.vn/Files/2023/05/05/1528696/vivo-v27e-aura-light-050523-164144-800-resize.jpg");
+        mangquangcao.add("https://cdn.tgdd.vn/Files/2023/05/05/1528696/v27e-display-050523-160403-800-resize.jpg");
         for(int i = 0; i < mangquangcao.size(); i++){
             ImageView imageView = new ImageView(getApplicationContext());
             Glide.with(getApplicationContext()).load(mangquangcao.get(i)).into(imageView);
