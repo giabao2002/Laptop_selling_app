@@ -16,7 +16,7 @@
     </androidx.appcompat.widget.Toolbar>
     <EditText
 
-        android:hint="Nhập sản phẩm cần tìm"
+        android:hint="Nhập tên sản phẩm"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

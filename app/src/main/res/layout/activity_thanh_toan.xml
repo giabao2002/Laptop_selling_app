@@ -20,26 +20,29 @@
         android:layout_marginTop="5dp"
         android:elevation="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="135dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
                 android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="30dp">
                 <ImageView
                     android:src="@drawable/icon_money"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"/>
                 <TextView
                     android:id="@+id/txttongtien"
                     android:text="25000"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
+                    android:layout_gravity="center"
                     android:textColor="@android:color/holo_red_light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -53,18 +56,21 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginTop="5dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp">
                 <ImageView
                     android:src="@drawable/ic_mobile"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"/>
                 <TextView
                     android:id="@+id/txtsodienthoai"
                     android:text="0123456789"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
+                    android:layout_gravity="center"
                     android:textColor="@android:color/holo_red_light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -77,23 +83,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp">
 
                 <ImageView
                     android:src="@drawable/ic_email"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="match_parent"/>
 
                 <TextView
                     android:id="@+id/txtemail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="test@gmail.com"
+                    android:layout_gravity="center"
                     android:textColor="@android:color/holo_red_light"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
