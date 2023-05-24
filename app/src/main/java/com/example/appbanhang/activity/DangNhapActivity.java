@@ -85,21 +85,21 @@ public class DangNhapActivity extends AppCompatActivity {
         btndangnhap = findViewById(R.id.btndangnhap);
         txtresetpass = findViewById(R.id.txtresetpass);
         // read data
-        if (Paper.book().read("email") != null && Paper.book().read("pass") != null) {
-            email.setText(Paper.book().read("email"));
-            pass.setText(Paper.book().read("pass"));
-            if(Paper.book().read("islogin") != null){
-                boolean flag = Paper.book().read("islogin");
-                if(flag){
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            dangNhap(Paper.book().read("email"), Paper.book().read("pass"));
-                        }
-                    },1000);
-                }
-            }
-        }
+//        if (Paper.book().read("email") != null && Paper.book().read("pass") != null) {
+//            email.setText(Paper.book().read("email"));
+//            pass.setText(Paper.book().read("pass"));
+//            if(Paper.book().read("islogin") != null){
+//                boolean flag = Paper.book().read("islogin");
+//                if(flag){
+//                    new Handler().postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            dangNhap(Paper.book().read("email"), Paper.book().read("pass"));
+//                        }
+//                    },1000);
+//                }
+//            }
+//        }
     }
 
     private void dangNhap(String email, String pass) {
